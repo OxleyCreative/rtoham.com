@@ -6,7 +6,7 @@ class Article(models.Model):
     text = models.TextField()
     show_on_homepage = models.BooleanField(
         "show on homepage", default=False)
-    order = models.IntegerField()
+    order = models.IntegerField(default=0)
     title = models.CharField(max_length=128)
 
     def __unicode__(self):
