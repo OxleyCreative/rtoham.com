@@ -1,0 +1,10 @@
+{% if top_articles %}
+  <div>
+    {% for article in top_articles %}
+      <h2>{{ article.title }}</h2>
+      <p>{{ article.text }}</p>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No articles are available.</p>
+{% endif %}

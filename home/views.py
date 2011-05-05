@@ -1,4 +1,11 @@
+from django.template import Context, loader
 from django.http import HttpResponse
+from home.models import Article
 
 def index(request):
-    return HttpResponse("Hello, World!")
+    top_articles = Article.objects.all()[:5]
+    t = loader.get_template("home/index.html")
+    c = Context({
+            "top_articles": top_articles,
+    })
+    return HttpResponse(t.render(c))
