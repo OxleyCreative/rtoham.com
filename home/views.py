@@ -1,11 +1,8 @@
-from django.template import Context, loader
-from django.http import HttpResponse
 from home.models import Article
+from django.shortcuts import render_to_response
 
 def index(request):
     top_articles = Article.objects.all()[:5]
-    t = loader.get_template("home/index.html")
-    c = Context({
-            "top_articles": top_articles,
-    })
-    return HttpResponse(t.render(c))
+    return render_to_response("home/index.html",
+                              {"top_articles": top_articles})
+
