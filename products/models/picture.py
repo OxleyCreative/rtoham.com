@@ -1,4 +1,6 @@
 from django.db import models
+import Image, os, tempfile
+from django.core.files import File
 
 class PictureValidators:
     @staticmethod
@@ -35,9 +37,41 @@ class Picture(models.Model):
     height = models.IntegerField(null=True)
     thumbnail_width = models.IntegerField(null=True)
     thumbnail_height = models.IntegerField(null=True)
+    
+    THUMBNAIL_SIZE = (120, 90)
+    IMAGE_SIZE = (460, 345)
 
     def __unicode__(self):
         return self.alt_text
+
+    def save(self, *args, **kwargs):
+        if self.original_image != None:
+            if not hasattr(self.thumbnail, "file"):
+                self.populateResizedImage(self.THUMBNAIL_SIZE, self.thumbnail)
+            if not hasattr(self.image, "file"):
+                self.populateResizedImage(self.IMAGE_SIZE, self.image)
+        super(Picture, self).save(*args, **kwargs)
+        
+    def populateResizedImage(self, size, attribute):
+        self.original_image.open("rb")
+        image = Image.open(self.original_image)
+        name, ext = os.path.splitext(self.original_image.name)
+        resized = image.resize(size, Image.ANTIALIAS)
+        
+        # Create a temporary file to save the resized image to.
+        (temp_fd, temp_filepath) = tempfile.mkstemp(ext)
+        # We'll have to close the file using the file descriptor and
+        # re-open it using open, since file objects opened using
+        # os.fdopen do not work with django File objects.
+        os.close(temp_fd)
+        temp_file = open(temp_filepath, "w+b")
+        resized.save(temp_file)
+        attribute.save(self.original_image.name,
+                               File(temp_file),
+                               save=False)
+        temp_file.close()
+        os.remove(temp_filepath)
+        self.original_image.close()
 
     class Meta:
       app_label = 'products'
