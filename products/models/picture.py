@@ -15,21 +15,21 @@ class PictureValidators:
 class Picture(models.Model):
     created_at = models.DateTimeField("created at", auto_now_add=True)
     modified_at = models.DateTimeField("modified at", auto_now=True)
-    original_image = models.ImageField(upload_to="images/originals",
-                                       height_field="original_height",
-                                       width_field="original_width",
-                                       validators=
-                                       [PictureValidators.validate_aspect_ratio])
-    image = models.ImageField(upload_to="images",
-                              height_field="height",
-                              width_field="width",
-                              validators=
-                              [PictureValidators.validate_aspect_ratio])
-    thumbnail = models.ImageField(upload_to="images/thumbnails",
-                                  height_field="thumbnail_height",
-                                  width_field="thumbnail_width",
-                                  validators=
-                                  [PictureValidators.validate_aspect_ratio])
+    original_image = models.ImageField(
+        upload_to="images/originals",
+        height_field="original_height",
+        width_field="original_width",
+        validators=[PictureValidators.validate_aspect_ratio])
+    image = models.ImageField(
+        upload_to="images",
+        height_field="height",
+        width_field="width",
+        validators=[PictureValidators.validate_aspect_ratio])
+    thumbnail = models.ImageField(
+        upload_to="images/thumbnails",
+        height_field="thumbnail_height",
+        width_field="thumbnail_width",
+        validators=[PictureValidators.validate_aspect_ratio])
     alt_text = models.TextField()
     original_width = models.IntegerField()
     original_height = models.IntegerField()
