@@ -2,34 +2,15 @@
 
 {% block content %}
 <div id="slideshow">
-  <div>
-	<div class="slidecopy">
-	  <h1>Delesci andiore pelloris</h1>
-	  <p>Delesci andiore pelloris rehent qui uta ped etur mo estiorio. Udi que nem reritaquis eiusanimo ommo tempere stionsequia none porepero eario id maximus de dest re niscillis magnita dolupta quae simporro et pel ma vellata cum harum fuga. Ime voluptatiate et renet volores sequo doloribusam vellaccati inus serupta volore soloribus sin con pra pe dolutem est, cus si ut quisqui ant et arumque natet moditio rionsequo etur? Dandae que nest, oditaque endae nis delitatiam audi quid quod min nectiisquo dolessi magnatia deliquatium esci odi cusa quis dolut fuga. To qui ium adit quia sum quis et volluptisti dolo vollati nvelest, cusantur as et, iliassitasi consequi blaborecto beroritatem. Nam, sequi asperrum vendande venis volent.</p>
-	</div>
-	<img src="http://www.foodsubs.com/Photos/pear-d'anjou.jpg" alt="RTO Electronics logo" />
-  </div>
-  <div>
-	<div class="slidecopy">
-	  <h1>Id quatur rest</h1>
-	  <p>Id quatur rest, sima sitaspid molessit od eicae peribusaped ut ent, quaepudis des eum, quias quia volor aut facerem esti berum nissim rerit alicaborio. Nam, aut ea quo que omnisit facesti ipisimillam explabo riorecum dolori te aspis dolor repererum, sinti intisqui occuptur autatem undi reperore expe cum ut excestium veniminum aut exceaque magnis asperum aut assi reium quia conseri buscid qui to dolor simil molore, nonsed quo moluptas dolores temque porepre voloriam inihit vellendame am imporesequam renis sit vidist ma que conse vel ma voluptatem</p>
-	</div>
-	<img src="http://www.onlinetrees.com.au/resources/E7/1000423/picture/1E/12944158.jpg" alt="RTO Electronics logo" />
-  </div>
-  <div>
-	<div class="slidecopy">
-	  <h1>Et Lique</h1>
-	  <p>et lique explaccum quos enim eost, cus sum apisitatiosa nem es num ius rerectem dolore repudi num sectas as est fugiatur, optatur maionestiam vent mod et hitiumq uatetur remod molecab ideris enem explam reribus dolecab oratiur anisim acid mi, et aut exceseniento mos sitatium quidebiscim fugitia cum endunt.</p>
-	</div>
-	<img src="http://blog.usapears.org/wp-content/uploads/2011/07/pear-painting.jpg" alt="RTO Electronics logo" />
-  </div>
-  <div>
-	<div class="slidecopy">
-	  <h1>Ratur rero experem porenisimus sundipsam</h1>
-	  <p>Ratur rero experem porenisimus sundipsam hil in nit molorende veliquidebis eos aniatessitat voloriasinus rempore mpelecuscium natur repe vidus dolorio nectur as samus adit, solo et earum dolupta temporae. Maxime pra vendignam cor modi doluptatum illenih illestem que volut mi, ut hil intiorro et officab idel earciis dolupide nulleniet odi doluptia is eatquia destrup tatem. Evelibus ressi odi berferiam estius sam eum quodi tem rehenet accaborias id quis ium is rem re doluptas si cus est, ut a doluptati que odistis et aut dicit, sunt porerat emporepudis alit, etur res verumque nimagnis magnitibus dolorum inctotat.</p>
-	</div>
-	<img src="http://static.howstuffworks.com/gif/willow/pear-info0.gif" alt="RTO Electronics logo" />
-  </div>
+  {% for unit in units %}
+    <div>
+      <div class="slidecopy">
+        <h1>{{ unit.title }}</h1>
+        <p>{{ unit.description }}</p>
+      </div>
+      <img src="{{ unit.image.image.url }}" alt="{{ unit.image.alt_text }}" />
+    </div>
+  {% endfor %}
 </div>
 <div id="sidebar">
   <ul>
