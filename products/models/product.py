@@ -27,6 +27,7 @@ class Product(models.Model):
         null=True,
         blank=True)
     quantity = models.IntegerField(null=True, blank=True)
+    slug = models.SlugField(unique=True, db_index=True)
 
     def __unicode__(self):
         return self.title

@@ -8,7 +8,9 @@ class Article(models.Model):
         "show on homepage", default=False)
     order = models.IntegerField(default=0)
     title = models.CharField(max_length=128)
-
+    link = models.CharField(max_length=200, blank=True)
+    slug = models.SlugField(unique=True, db_index=True)
+    
     def __unicode__(self):
         return self.title
 

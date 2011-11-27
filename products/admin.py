@@ -9,8 +9,9 @@ class ProductAdmin(admin.ModelAdmin):
     fields = [
         'title', 'description', 'category',
         'image', 'images', 'price',
-        'quantity'
+        'quantity', 'slug'
     ]
+    prepopulated_fields = {'slug': ('category', 'title',)}
 
 admin.site.register(Picture, PictureAdmin)
 admin.site.register(Product, ProductAdmin)

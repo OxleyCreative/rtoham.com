@@ -1,14 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    {% block head %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<meta name="author" content="Robert Oxley" />
+	<meta name="author" content="Steven Oxley" />
+	<meta name="keywords" content="radio, ham, electronics, kit, heath, ron, oxley, wm8z" />
+	<meta name="description" content="Ham radio sales and repair services" />
+	<meta name="robots" content="all" />
+	{% block head %}
+	<title>{% block title %}RTO Electronics{% endblock title %}</title>
     {% block scripts %}
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    {% endblock scripts %}
-    <title>{% block title %}RTO Electronics{% endblock %}</title>
-    {% endblock head %}
-  </head>
-  <body>
-    {% block body %}{% endblock %}
-  </body>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js">
+	</script>
+	<script type="text/javascript" src="/static/scripts/cyclelite.js">
+	</script>
+	<script type="text/javascript" src="/static/scripts/slideshow.js">
+	</script>
+	{% endblock scripts %}
+    {% block styles %}
+	<style type="text/css" media="all">
+		@import "/static/css/reset.css";
+		@import "/static/css/styles.css";
+		@import url(http://fonts.googleapis.com/css?family=Candal);
+	</style>
+    {% endblock styles %}
+	{% endblock head %}
+</head>
+<body>
+<div id="container">
+	<div id="header">
+      {% block header %}
+        <a href="/">
+		<img src="/static/images/logo.png" alt="RTO Electronics logo" />
+        </a>
+		<ul id="navbar">
+			<li><a {% if currentpage == "home" %}id="currentpage"{% endif %}
+                   href="/">Home</a></li>
+			<li><a {% if currentpage == "products" %}
+                     id="currentpage"
+                   {% endif %}
+                   href="/products/">Products &amp; Services</a></li>
+			<li><a {% if currentpage == "about-us" %}id="currentpage"{% endif %}
+                   href="/about-us/">About Us</a></li>
+			
+		</ul>
+      {% endblock header %}
+	</div>
+	<div id="content">
+      {% block content %}{% endblock content %}
+	</div>
+	<div id="footer">
+	  {% block footer %}{% endblock footer %}
+	</div>
+</div>
+</body>
 </html>
