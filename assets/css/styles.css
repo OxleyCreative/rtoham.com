@@ -26,7 +26,11 @@ a:hover
 {
 color: #B8C1B9;
 }
-/*--------------*/
+ul
+{
+list-style: none;
+}
+/*end general styles*/
 
 
 /*--------------------header styling-------------------------- */
@@ -58,11 +62,83 @@ font-family: 'Candal', sans-serif;
 {
 border-bottom: solid 5px white;
 }
-/*------------------------------------------------------------ */
+/*end header---------------------------------------- */
 
 
 
 /*--------------------content styling------------------------- */
+
+/*about us styles*/
+
+/*vcard styles*/
+#about
+{
+margin-bottom: 20px;
+width: 350px;
+float: left;
+}
+#about p
+{
+font-size: .9em;
+line-height: 1.3em;
+padding-left: 20px;
+}
+.vcard
+{
+padding-left: 20px;
+padding-top: 20px;
+font-family: Corbel, Tahoma, sans-serif;
+line-height: 1.3em;
+margin-bottom: 20px;
+}
+.vcard a
+{
+color: #339999;
+}
+.vcard a:hover
+{
+color: #B8C1B9;
+}
+.photo
+{
+height: 150px;
+width: 150px;
+float: left;
+margin-right: 15px;
+}
+.country-name
+{
+display: block;
+}
+.url
+{
+font-family: Minion Pro, Georgia, serif;
+font-size: 1.5em;
+font-weight: bold;
+}
+/*end vcard----*/
+
+/*blog styles*/
+#blog
+{
+float: right;
+width: 530px;
+padding-right: 30px;
+padding-top: 13px;
+margin-bottom: 20px;
+}
+#blog h1
+{
+color: #B8C1B9;
+font-size: 2em;
+margin-bottom: 15px;
+}
+#blog p
+{
+line-height: 1.6em;
+}
+/*end blog---*/
+/*end about us-----*/
 
 /*products & services styles*/
 #items
@@ -71,7 +147,7 @@ float: right;
 margin: 10px;
 width: 700px;
 }
-div#items div
+div#items > div
 {
 min-height: 100px;
 padding: 10px;
@@ -95,14 +171,147 @@ margin-right: 15px;
 }
 #items a
 {
-color: #B8C1B9;
+color: #339999;
 }
 #items a:hover
 {
-color: #339999;
+color: #B8C1B9;
 }
-/*-------------------------*/
+#items div > a + p
+{
+float:left;
+width: 385px;
+}
+.price
+{
+float: right;
+}
+.price p
+{
+width: 100px;
+text-align: right;
+}
+.price span:first-child
+{
+color: #B8C1B9;
+}
+.price span
+{
+text-transform: uppercase;
+}
+.price span+span
+{
+font-size: 1.5em;
+}
+.clearfix
+{
+clear:both;
+height: 0;
+}
+ul.pagenav
+{
+float: right;
+}
+.pagenav li
+{
+text-align: right;
+display: inline;
+clear: both;
+}
+/*sidenav styles*/
+#sidenav
+{
+position: fixed;
+padding: 15px 10px 0px 10px;
+margin-right: 10px;
+min-height: 535px;
+width: 200px;
+float: left;
+}
+#sidenav ul
+{
+text-align: right;
+list-style: none;
+}
+#sidenav li
+{
+float:right;
+width: 150px;
+margin-bottom: 10px;
+border-bottom: solid 1px #E8EFEE;
+}
+#sidenav a
+{
+color: #339999;
+font-weight:bold;
+font-family: Corbel, Tahoma, sans-serif;
+text-transform: uppercase;
+}
+#sidenav a:hover
+{
+color: #B8C1B9;
+}
+/*end sidenav-----*/
+/*end products & services----------*/
 
+/*individual product page styles*/
+div#prodimgs
+{
+float: left;
+width: 460px;
+padding: 20px;
+}
+#prodimgs img
+{
+background-color: #999999;
+}
+.mainprodimg
+{
+height: 345px;
+width: 460px;
+}
+.thumbprodimg
+{
+height: 90px;
+width: 120px;
+margin-top: 20px;
+margin-right: 45px;
+}
+#prodimgs img + img + img + img
+{
+margin-right: 0px;
+}
+div#proddesc
+{
+width: 420px;
+float: left;
+padding: 20px 20px 20px 0px;
+}
+#proddesc h1
+{
+font-family: Minion Pro, Georgia, serif;
+font-size: 1.7em;
+font-weight: bold;
+color: #339999;
+margin-bottom: 15px;
+}
+
+#proddesc p
+{
+line-height: 1.6em;
+margin-bottom: 15px;
+}
+#proddesc a
+{
+width: 101px;
+height: 29px;
+float: right;
+clear: both;
+}
+
+/*end individual product page---*/
+
+/*homepage styles-------------------*/
 /*slideshow styles*/
 #slideshow
 {
@@ -129,16 +338,16 @@ float: left;
 width: 460px;
 height: 345px;
 }
-/*----------------*/
+/*end slideshow-------*/
 
 /*sidebar styles*/
 #sidebar
 {
-padding: 15px 10px 0px 10px;
+padding: 15px 15px 0px 15px;
 margin-right: 10px;
 background-color: #339999;
 min-height: 585px;
-width: 200px;
+width: 190px;
 float: right;
 }
 #sidebar ul
@@ -156,44 +365,10 @@ color: #fff;
 margin-bottom: 15px;
 
 }
-/*--------------*/
+/*end sidebar------*/
 
-/*sidenav styles*/
-#sidenav
-{
-position: fixed;
-padding: 15px 10px 0px 10px;
-margin-right: 10px;
-min-height: 535px;
-width: 200px;
-float: left;
-}
-#sidenav ul
-{
-text-align: right;
-list-style: none;
-}
-#sidenav li
-{
-float:right;
-width: 150px;
-margin-bottom: 10px;
-border-bottom: solid 1px #E8EFEE;
-}
-#sidenav a
-{
-color: #B8C1B9;
-font-weight:bold;
-font-family: Corbel, Tahoma, sans-serif;
-text-transform: uppercase;
-}
-#sidenav a:hover
-{
-color: #339999;
-}
-/*--------------*/
 
-/*section styles*/
+/*sections styles*/
 #sections
 {
 padding: 360px 0px 0px 10px;
@@ -215,9 +390,9 @@ color: #fff;
 font-size: 1.2em;
 margin-bottom: 5px;
 }
-/*--------------*/
-
-/*------------------------------------------------------------ */
+/*end sections------*/
+/*end homepage--------------*/
+/*end content---------------------------------------- */
 
 
 
@@ -227,6 +402,32 @@ margin-bottom: 5px;
 clear: both;
 min-height: 100px;
 background-color: #339999;
-
+text-align: center;
+color: #fff;
 }
-/*------------------------------------------------------------ */
+
+#bottomnav
+{
+padding-top: 15px;
+padding-bottom: 5px;
+text-transform: uppercase;
+}
+#bottomnav li
+{
+display: inline;
+color: #fff;
+margin-right: 20px;
+}
+#bottomnav li:last-child
+{
+margin-right: 0px;
+}
+#bottomnav a
+{
+color: #fff;
+}
+#bottomnav a:hover
+{
+color: #B8C1B9;
+}
+/*end footer----------------------------------------------- */
