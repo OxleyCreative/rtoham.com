@@ -140,7 +140,11 @@ function go(els, opts, manual, fwd) {
         opts.currSlide = roll ? els.length-1 : opts.nextSlide-1;
     }
     
-    function queueNext() {
+	if(p.cyclePause){
+	queueNext();
+	}
+    
+	function queueNext() {
         if (opts.timeout)
             p.cycleTimeout = setTimeout(function() { go(els,opts,0,!opts.rev) }, opts.timeout);
     }
