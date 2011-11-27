@@ -3,7 +3,8 @@ from django.shortcuts import render_to_response, get_object_or_404
 
 def index(request):
     sectionQuery = Article.objects.filter(
-        slug__in=['homepage-section-' + str(x) for x in range(1,4)])
+        slug__in=['homepage-section-' + str(x) for x in range(1,4)]
+    ).order_by('slug')
     sections = []
     for article in sectionQuery:
         sections.append(article)
