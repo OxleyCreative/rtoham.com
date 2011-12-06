@@ -14,11 +14,21 @@ def index(request):
         category="USED_EQUIPMENT"
     ).order_by("-modified_at")[:5]
     units = [unit for unit in equipmentQuery]
+
+    articlesQuery = Article.objects.filter(
+        show_on_homepage = True
+    ).order_by("-created_at")[:5]
+    articles = [article for article in articlesQuery]
     return render_to_response("home/index.html",
                               {"currentpage": "home",
                                "sections": sections,
-                               "units": units})
+                               "units": units,
+                               "articles": articles})
 
 def detail(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
+    return render_to_response('home/detail.html', {'article': article})
+
+def detail_with_slug(request, article_slug):
+    article = get_object_or_404(Article, slug=article_slug)
     return render_to_response('home/detail.html', {'article': article})

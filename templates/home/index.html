@@ -14,32 +14,22 @@
 </div>
 <div id="sidebar">
   <ul>
+    {% for article in articles %}
 	<li>
-	  <h3>Come to event 1</h3>
-	  <p>4.5.2098 - This is a description of the event aforementioned so just enjoy it</p>
+      <h3>
+        <a href="{{ article.article_link }}">
+          {{ article.title }}
+        </a>
+      </h3>
+      <p>{{ article.text }}</p>
 	</li>
-	<li>
-	  <h3>Event two is fun!</h3>
-	  <p>4.5.2098 - This is a description of the event aforementioned so just enjoy it</p>
-	</li>
-	<li>
-	  <h3>I don't know event 3</h3>
-	  <p>4.5.2098 - This is a description of the event aforementioned so just enjoy it</p>
-	</li>
-	<li>
-	  <h3>Where my events at?</h3>
-	  <p>4.5.2098 - This is a description of the event aforementioned so just enjoy it</p>
-	</li>
-	<li>
-	  <h3>Yep it's time</h3>
-	  <p>4.5.2098 - This is a description of the event aforementioned so just enjoy it</p>
-	</li>
+    {% endfor %}
   </ul>		
 </div>
 <div id="sections">
   {% for section in sections %}
     <div>
-      <a href="{{ section.link }}"><h2>{{ section.title }}</h2></a>
+      <h2><a href="{{ section.link }}">{{ section.title }}</a></h2>
       <p>{{ section.text }}</p>
     </div>
   {% endfor %}

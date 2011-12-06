@@ -14,6 +14,13 @@ class Article(models.Model):
     def __unicode__(self):
         return self.title
 
+    def article_link(self):
+        """
+        Returns the correct link for an article, which will be the
+        link field if it is populated - otherwise routed slug field.
+        """
+        return self.link if self.link != "" else "/articles/" + self.slug
+
     class Meta:
         ordering = ["order", "-created_at"]
         app_label = 'home'
