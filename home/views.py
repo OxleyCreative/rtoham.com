@@ -32,3 +32,11 @@ def detail(request, article_id):
 def detail_with_slug(request, article_slug):
     article = get_object_or_404(Article, slug=article_slug)
     return render_to_response('home/detail.html', {'article': article})
+
+def about_us(request):
+    articles = Article.objects.filter(
+        show_on_homepage = True).order_by("-created_at")[:1]
+    article = articles[0] if len(articles) == 1 else None
+    return render_to_response('home/about_us.html',
+                              {'article': article,
+                               'currentpage': 'about-us'})

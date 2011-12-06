@@ -36,13 +36,13 @@
         </a>
 		<ul id="navbar">
 			<li><a {% if currentpage == "home" %}id="currentpage"{% endif %}
-                   href="/">Home</a></li>
+                   href="{% url home.views.index %}">Home</a></li>
 			<li><a {% if currentpage == "products" %}
                      id="currentpage"
                    {% endif %}
-                   href="/products/">Products &amp; Services</a></li>
+                   href="{% url products.views.index %}">Products &amp; Services</a></li>
 			<li><a {% if currentpage == "about-us" %}id="currentpage"{% endif %}
-                   href="/about-us/">About Us</a></li>
+                   href="{% url home.views.about_us %}">About Us</a></li>
 			
 		</ul>
       {% endblock header %}
