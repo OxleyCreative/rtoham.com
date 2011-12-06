@@ -32,3 +32,10 @@ def product_list(request, category_string):
         {'categories': categories,
          'category_strings': category_strings,
          'currentpage': 'products'})
+
+def product(request, slug):
+    product = get_object_or_404(Product.objects.select_related(
+            'image'), slug = slug)
+    return render_to_response(
+        'products/product.html',
+        {'product': product})

@@ -29,6 +29,9 @@ class Product(models.Model):
     quantity = models.IntegerField(null=True, blank=True)
     slug = models.SlugField(unique=True, db_index=True)
 
+    def url(self):
+        return '/product/' + self.slug + '/'
+
     def __unicode__(self):
         return self.title
 

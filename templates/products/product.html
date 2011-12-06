@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="prodimgs">
+  {% if product.image %}
+  <div>
+    <img src="{{ product.image.image.url }}"
+         alt="{{ product.image.alt_text }}" class="mainprodimg" />
+    <img src="{{ product.image.thumbnail.url }}" class="thumbprodimg"
+         alt="{{ product.image.alt_text }}" style="display:none;" />
+    <a href="{{ product.image.original_image.url }}" style="display:none;" ></a>
+  </div>
+  {% else %}
+  <div>
+    <img src="/static/images/usedplace.png" alt=""
+         class="mainprodimg" />
+    <img src="/static/images/usedplace.png" alt=""
+         class="thumbprodimg" style="display:none;" />
+    <a href="/static/images/usedplace.png" style="display:none;" ></a>
+  </div>
+  {% endif %}
+
+  {% for image in product.images.all %}
+  <div>
+    <img src="{{ image.image.url }}" alt="{{ image.alt_text }}"
+         class="mainprodimg" style="display:none;" />
+    <img src="{{ image.thumbnail.url }}"
+         alt="{{ image.alt_text }}"
+         class="thumbprodimg" />
+    <a href="{{ image.original_image.url }}" style="display:none;" ></a>
+  </div>
+  {% endfor %}
+</div>
+<div id="proddesc">
+  <h1>{{ product.title }}</h1>
+  <p>{{ product.description }}</p>
+  {% if product.price %}
+  <p class="price"><span>Price:</span> <span>${{ product.price }}</span></p>
+  {% endif %}
+  <a href="mailto:hamtech@rtoham.com"><img src="/static/images/request.png" alt="Product request button" /></a>
+</div>
+<script type="text/javascript" src="/static/scripts/product_images.js"></script>
+{% endblock content %}

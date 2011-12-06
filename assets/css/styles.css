@@ -269,6 +269,7 @@ background-color: #999999;
 {
 height: 345px;
 width: 460px;
+cursor: pointer;
 }
 .thumbprodimg
 {
@@ -276,8 +277,13 @@ height: 90px;
 width: 120px;
 margin-top: 20px;
 margin-right: 45px;
+cursor: pointer;
 }
-#prodimgs img + img + img + img
+#prodimgs div
+{
+    float: left;
+}
+#prodimgs div:last-child img
 {
 margin-right: 0px;
 }

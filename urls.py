@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     (r'^$', 'home.views.index'),
     (r'^articles/', include('home.urls')),
     (r'^products/', include('products.urls')),
+    (r'^product/(?P<slug>[A-Za-z0-9_-]+)/', 'products.views.product'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     #(r'^admin/doc/', include('django.contrib.admindocs.urls')),

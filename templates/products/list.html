@@ -27,7 +27,9 @@
   <div>
 	<a href="{{ unit.url }}">
       <img src="{{ unit.image.thumbnail.url|default:"/static/images/usedplace.png" }}"
-           alt="{{ unit.image.alt_text|default:"" }}"/>
+p           alt="{{ unit.image.alt_text|default:"" }}"/>
+    </a>
+    <a href="{{ unit.url }}">
       <h2>{{ unit.title }}</h2>
     </a>
 	<p>{{ unit.description|truncatewords:30 }}</p>
@@ -42,6 +44,8 @@
     <a href="{{ manual.url }}">
       <img src="{{ manual.image.thumbnail.url|default:"/static/images/manualplace.png" }}"
            alt="{{ manual.image.alt_text|default:"" }}"/>
+    </a>
+    <a href="{{ manual.url }}">
       <h2>{{ manual.title }}</h2>
     </a>
 	<p>{{ manual.description|truncatewords:30 }}</p>	  
@@ -56,6 +60,8 @@
 	<a href="{{ part.url }}">
       <img src="{{ part.image.thumbnail.url|default:"/static/images/partplace.png" }}"
            alt="{{ part.image.alt_text|default:"" }}"/>
+    </a>
+    <a href="{{ part.url }}">
       <h2>{{ part.title }}</h2>
     </a>
 	<p>{{ part.description|truncatewords:30 }}</p>
@@ -70,6 +76,8 @@
 	<a href="{{ accessory.url }}">
       <img src="{{ accessory.image.thumbnail.url|default:"/static/images/accessoryplace.png" }}"
            alt="{{ accessory.image.alt_text|default:"" }}"/>
+    </a>
+    <a href="{{ accessory.url }}">
       <h2>{{ accessory.title }}</h2>
     </a>
 	<p>{{ accessory.description|truncatewords:30 }}</p>
@@ -84,6 +92,8 @@
 	<a href="{{ repair.url }}">
       <img src="{{ repair.image.thumbnail.url|default:"/static/images/repairplace.png" }}"
            alt="{{ repair.image.alt_text|default:"" }}"/>
+    </a>
+    <a href="{{ repair.url }}">
       <h2>{{ repair.title }}</h2>
     </a>
 	<p>{{ repair.description|truncatewords:30 }}</p>	
