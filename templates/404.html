@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}RTO Electronics : Page Not Found{% endblock %}
+{% block content %}
+<div id="error">
+  <h1>404-Error Page Not Found</h1>
+  <img src="images/404.png" alt="RTO Electronics logo" />
+  <p>This is not the page you're looking for...and we're sorry about that! Help us out by contacting us if you got here via a broken link. Thanks, and have a Great Day!</p> 
+  <script type="text/javascript">
+	var GOOG_FIXURL_LANG = 'en';
+	var GOOG_FIXURL_SITE = 'http://www.rtoham.com'
 
-{% block body %}
-<h1>Not Found</h1>
-<p>
-  Sorry, but we could not find the page you were trying to access.
-</p>
-{% endblock %}
+  </script>
+  <script type="text/javascript"
+		  src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js">
+  </script>
+</div>
+
+{% endblock content %}
