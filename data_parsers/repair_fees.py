@@ -44,7 +44,7 @@ def parse_repair_fees():
                  "category": "REPAIRS",
                  "title": match[0],
                  "description": "Send your " + match[0] + " to us for repair.",
-                 "price": float(match[1]),
+                 "price": match[1],
                  "slug": slug,
                  "created_at": str(datetime.datetime.now()),
                  "modified_at": str(datetime.datetime.now())

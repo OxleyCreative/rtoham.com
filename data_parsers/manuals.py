@@ -30,7 +30,7 @@ def parse_manuals(pk):
                         "category": "MANUALS",
                         "title": name,
                         "description": description,
-                        "price": float(match[2]),
+                        "price": match[2],
                         "slug": slug,
                         "created_at": str(datetime.datetime.now()),
                         "modified_at": str(datetime.datetime.now())

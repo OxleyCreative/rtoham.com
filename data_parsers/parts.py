@@ -21,7 +21,7 @@ def parse_parts(pk):
                   "category": "PARTS",
                   "title": name,
                   "description": "We carry " + name + ". Please contact us regarding availability and shipping/handling prices.",
-                  "price": float(price),
+                  "price": price,
                   "slug": slug,
                   "created_at": str(datetime.datetime.now()),
                   "modified_at": str(datetime.datetime.now())
