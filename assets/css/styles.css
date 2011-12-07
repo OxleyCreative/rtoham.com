@@ -407,6 +407,32 @@ color: #B8C1B9;
 }
 /*end sections------*/
 /*end homepage--------------*/
+
+/*404 Error Page Styles*/
+div#error
+{
+min-height: 500px;
+}
+#error h1
+{
+color: #339999;
+font-size: 1.7em;
+margin-bottom: 20px;
+}
+#error img
+{
+margin-right: 40px;
+float: left;
+}
+#error p
+{
+float: left;
+margin-bottom: 40px;
+margin-top: 40px;
+padding-right: 20px;
+width: 420px;
+}
+/*End 404 Styles-------*/
 /*end content---------------------------------------- */
 
 
