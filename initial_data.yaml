@@ -1,0 +1,22 @@
+- fields: {created_at: !!timestamp '2011-11-27 12:41:16', link: /products/repairs/,
+    modified_at: !!timestamp '2011-11-27 12:41:16', order: 0, show_on_homepage: false,
+    slug: homepage-section-3, text: A list of service fees arranged alpabetically
+      by model number. This list shows the standard charge for labor on the Heathkit
+      models we service., title: Repairs}
+  model: home.article
+  pk: 3
+- fields: {created_at: !!timestamp '2011-11-27 12:40:24', link: '/products/parts,accessories/',
+    modified_at: !!timestamp '2011-12-06 01:49:11', order: 0, show_on_homepage: false,
+    slug: homepage-section-2, text: A partial listing of parts available for your
+      Heathkit ham gear. Our parts inventory is extensive - we have listed some of
+      the more popular items. Please contact us for price and availability., title: Parts
+      & Accessories}
+  model: home.article
+  pk: 2
+- fields: {created_at: !!timestamp '2011-11-27 12:39:37', link: /products/manuals/,
+    modified_at: !!timestamp '2011-11-27 12:40:37', order: 0, show_on_homepage: false,
+    slug: homepage-section-1, text: 'We have many Heathkit manuals available. Some
+      are original manuals, others are copies. Go to this page to check out our manual
+      prices.', title: Manuals}
+  model: home.article
+  pk: 1
