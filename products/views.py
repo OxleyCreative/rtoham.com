@@ -30,7 +30,7 @@ def product_list(request, category_string):
             query = query.order_by("-created_at")
         else:
             query = query.order_by("title")
-        categories[category] = query[:5]
+        categories[category] = query[:limit]
     
     return render_to_response(
         'products/list.html',
