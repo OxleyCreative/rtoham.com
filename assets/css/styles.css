@@ -137,6 +137,14 @@ margin-bottom: 15px;
 {
 line-height: 1.6em;
 }
+#blog a
+{
+color: #339999;
+}
+#blog a:hover
+{
+color: #B8C1B9;
+}
 /*end blog---*/
 /*end about us-----*/
 
@@ -341,6 +349,14 @@ font-size: 1.4em;
 float: left;
 width: 460px;
 height: 345px;
+}
+#slideshow a
+{
+color: #339999;
+}
+#slideshow a:hover
+{
+color: #B8C1B9;
 }
 /*end slideshow-------*/
 
