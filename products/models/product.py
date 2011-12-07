@@ -32,6 +32,20 @@ class Product(models.Model):
     def url(self):
         return '/product/' + self.slug + '/'
 
+    placeholder_images = {
+        'USED_EQUIPMENT': 'usedplace',
+        'MANUALS': 'manualplace',
+        'PARTS': 'partplace',
+        'REPAIRS': 'repairplace',
+        'ACCESSORIES': 'accessoryplace'
+        }
+    
+    def placeholder_image(self):
+        return '/static/images/' + self.placeholder_images[self.category] + 'l.png'
+
+    def placeholder_thumbnail(self):
+        return '/static/images/' + self.placeholder_images[self.category] + '.png'
+
     def __unicode__(self):
         return self.title
 

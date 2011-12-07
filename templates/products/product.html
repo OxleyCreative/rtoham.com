@@ -11,11 +11,11 @@
   </div>
   {% else %}
   <div>
-    <img src="/static/images/usedplace.png" alt=""
+    <img src="{{ product.placeholder_image }}" alt=""
          class="mainprodimg" />
-    <img src="/static/images/usedplace.png" alt=""
+    <img src="{{ product.placeholder_thumbnail }}" alt=""
          class="thumbprodimg" style="display:none;" />
-    <a href="/static/images/usedplace.png" style="display:none;" ></a>
+    <a href="{{ product.placeholder_image }}" style="display:none;" ></a>
   </div>
   {% endif %}
 
