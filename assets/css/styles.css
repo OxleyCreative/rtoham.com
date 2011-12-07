@@ -389,6 +389,10 @@ padding-left: 30px;
 padding-right: 29px;
 border-right: solid #B8C1B9 1px;
 }
+#sections div:last-child
+{
+border-right:none;
+}
 #sections h2
 {
 font-size: 1.2em;
