@@ -36,7 +36,7 @@ list-style: none;
 /*--------------------header styling-------------------------- */
 #header
 {
-background-color: #339999;
+background-color: #054c24;
 
 }
 div#header img
@@ -143,6 +143,7 @@ line-height: 1.6em;
 /*products & services styles*/
 #items
 {
+min-height: 500px;
 float: right;
 margin: 10px;
 width: 700px;
@@ -177,7 +178,7 @@ color: #339999;
 {
 color: #B8C1B9;
 }
-#items div > a + p
+#items div > h2 + p
 {
 float:left;
 width: 385px;
@@ -351,7 +352,7 @@ height: 345px;
 {
 padding: 15px 15px 0px 15px;
 margin-right: 10px;
-background-color: #339999;
+background-color: #054c24;
 min-height: 585px;
 width: 190px;
 float: right;
@@ -385,16 +386,24 @@ padding: 360px 0px 0px 10px;
 float: left;
 width: 180px;
 min-height: 200px;
-margin-right: 20px;
 margin-bottom: 15px;
 padding: 20px;
-background-color: #339999;
-color: #fff;
+padding-left: 30px;
+padding-right: 29px;
+border-right: solid #B8C1B9 1px;
 }
 #sections h2
 {
 font-size: 1.2em;
 margin-bottom: 5px;
+}
+#sections a
+{
+color: #339999;
+}
+#sections a:hover
+{
+color: #B8C1B9;
 }
 /*end sections------*/
 /*end homepage--------------*/
@@ -407,7 +416,7 @@ margin-bottom: 5px;
 {
 clear: both;
 min-height: 100px;
-background-color: #339999;
+background-color: #054c24;
 text-align: center;
 color: #fff;
 }
