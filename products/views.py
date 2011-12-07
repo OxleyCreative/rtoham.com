@@ -20,7 +20,7 @@ def product_list(request, category_string):
     if len(category_strings) > 1:
         limit = math.ceil(NUM_PER_PAGE / len(category_strings))
     else:
-        limit = sys.maxsize
+        limit = sys.maxint
         
     categories = {}
     for category in category_strings:
