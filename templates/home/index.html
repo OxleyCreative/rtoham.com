@@ -5,10 +5,14 @@
   {% for unit in units %}
     <div>
       <div class="slidecopy">
-        <h1>{{ unit.title }}</h1>
+        <h1><a href="{{ unit.url }}">{{ unit.title }}</a></h1>
         <p>{{ unit.description|truncatewords:30 }}</p>
       </div>
+      {% if unit.image %}
       <img src="{{ unit.image.image.url }}" alt="{{ unit.image.alt_text }}" />
+      {% else %}
+      <img src="{{ unit.placeholder_image }}" alt="" />
+      {% endif %}
     </div>
   {% endfor %}
 </div>

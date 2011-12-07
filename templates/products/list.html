@@ -22,35 +22,45 @@
 <div id="items">
   
   {% if categories.USED_EQUIPMENT %}
-  <h1>Used Equipment</h1>
+  <h1><a href="{% url products.views.product_list 'used_equipment' %}">Used Equipment</a></h1>
   {% for unit in categories.USED_EQUIPMENT %}
   {% include 'products/product_list_item.html' with product=unit placeholder='/static/images/usedplace.png' %}
   {% endfor %}
   {% endif %}
   
   {% if categories.MANUALS %}
-  <h1>Manuals</h1>
+  <h1>
+    <a href="{% url products.views.product_list 'manuals' %}">Manuals</a>
+  </h1>
   {% for manual in categories.MANUALS %}
   {% include 'products/product_list_item.html' with product=manual placeholder='/static/images/manualplace.png' %}
   {% endfor %}
   {% endif %}
   
   {% if categories.PARTS %}
-  <h1>Parts</h1>
+  <h1>
+    <a href="{% url products.views.product_list 'parts' %}">Parts</a>
+  </h1>
   {% for part in categories.PARTS %}
   {% include 'products/product_list_item.html' with product=part placeholder='/static/images/partplace.png' %}
   {% endfor %}
   {% endif %}
 
   {% if categories.ACCESSORIES %}
-  <h1>Accessories</h1>
+  <h1>
+    <a href="{% url products.views.product_list 'accessories' %}">
+      Accessories</a>
+  </h1>
   {% for accessory in categories.ACCESSORIES %}
   {% include 'products/product_list_item.html' with product=accessory placeholder='/static/images/accessoryplace.png' %}
   {% endfor %}
   {% endif %}
 
   {% if categories.REPAIRS %}
-  <h1>Repairs</h1>
+  <h1>
+    <a href="{% url products.views.product_list 'repairs' %}">
+      Repairs</a>
+  </h1>
   {% for repair in categories.REPAIRS %}
   {% include 'products/product_list_item.html' with product=repair placeholder='/static/images/repairplace.png' %}
   {% endfor %}

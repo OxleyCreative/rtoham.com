@@ -1,0 +1,6 @@
+<div id="blog">
+  {% if article %}
+  <h1><a href="{{ article.article_link }}" >{{ article.title }}</a></h1>
+  {{ article.text|linebreaks }}
+  {% endif %}
+</div>

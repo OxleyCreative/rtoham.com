@@ -35,8 +35,9 @@ def detail_with_slug(request, article_slug):
 
 def about_us(request):
     articles = Article.objects.filter(
-        show_on_homepage = True).order_by("-created_at")[:1]
+        show_on_homepage = True,
+        link = "").order_by("-created_at")[:3]
     article = articles[0] if len(articles) == 1 else None
     return render_to_response('home/about_us.html',
-                              {'article': article,
+                              {'articles': articles,
                                'currentpage': 'about-us'})
