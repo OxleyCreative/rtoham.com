@@ -23,81 +23,36 @@
   
   {% if categories.USED_EQUIPMENT %}
   <h1>Used Equipment</h1>
-  {% for unit in categories.USED_EQUIPMENT %} 
-  <div>
-	<a href="{{ unit.url }}">
-      <img src="{{ unit.image.thumbnail.url|default:"/static/images/usedplace.png" }}"
-p           alt="{{ unit.image.alt_text|default:"" }}"/>
-    </a>
-    <a href="{{ unit.url }}">
-      <h2>{{ unit.title }}</h2>
-    </a>
-	<p>{{ unit.description|truncatewords:30 }}</p>
-  </div>
+  {% for unit in categories.USED_EQUIPMENT %}
+  {% include 'products/product_list_item.html' with product=unit placeholder='/static/images/usedplace.png' %}
   {% endfor %}
   {% endif %}
   
   {% if categories.MANUALS %}
   <h1>Manuals</h1>
   {% for manual in categories.MANUALS %}
-  <div>
-    <a href="{{ manual.url }}">
-      <img src="{{ manual.image.thumbnail.url|default:"/static/images/manualplace.png" }}"
-           alt="{{ manual.image.alt_text|default:"" }}"/>
-    </a>
-    <a href="{{ manual.url }}">
-      <h2>{{ manual.title }}</h2>
-    </a>
-	<p>{{ manual.description|truncatewords:30 }}</p>	  
-  </div>
+  {% include 'products/product_list_item.html' with product=manual placeholder='/static/images/manualplace.png' %}
   {% endfor %}
   {% endif %}
   
   {% if categories.PARTS %}
   <h1>Parts</h1>
   {% for part in categories.PARTS %}
-  <div>
-	<a href="{{ part.url }}">
-      <img src="{{ part.image.thumbnail.url|default:"/static/images/partplace.png" }}"
-           alt="{{ part.image.alt_text|default:"" }}"/>
-    </a>
-    <a href="{{ part.url }}">
-      <h2>{{ part.title }}</h2>
-    </a>
-	<p>{{ part.description|truncatewords:30 }}</p>
-  </div>
+  {% include 'products/product_list_item.html' with product=part placeholder='/static/images/partplace.png' %}
   {% endfor %}
   {% endif %}
 
   {% if categories.ACCESSORIES %}
   <h1>Accessories</h1>
   {% for accessory in categories.ACCESSORIES %}
-  <div>
-	<a href="{{ accessory.url }}">
-      <img src="{{ accessory.image.thumbnail.url|default:"/static/images/accessoryplace.png" }}"
-           alt="{{ accessory.image.alt_text|default:"" }}"/>
-    </a>
-    <a href="{{ accessory.url }}">
-      <h2>{{ accessory.title }}</h2>
-    </a>
-	<p>{{ accessory.description|truncatewords:30 }}</p>
-  </div>
+  {% include 'products/product_list_item.html' with product=accessory placeholder='/static/images/accessoryplace.png' %}
   {% endfor %}
   {% endif %}
 
   {% if categories.REPAIRS %}
   <h1>Repairs</h1>
   {% for repair in categories.REPAIRS %}
-  <div>
-	<a href="{{ repair.url }}">
-      <img src="{{ repair.image.thumbnail.url|default:"/static/images/repairplace.png" }}"
-           alt="{{ repair.image.alt_text|default:"" }}"/>
-    </a>
-    <a href="{{ repair.url }}">
-      <h2>{{ repair.title }}</h2>
-    </a>
-	<p>{{ repair.description|truncatewords:30 }}</p>	
-  </div>
+  {% include 'products/product_list_item.html' with product=repair placeholder='/static/images/repairplace.png' %}
   {% endfor %}
   {% endif %}
   

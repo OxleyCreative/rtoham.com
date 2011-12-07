@@ -1,0 +1,15 @@
+<div>
+  <a href="{{ product.url }}">
+    <img src="{{ product.image.thumbnail.url|default:placeholder }}"
+         alt="{{ product.image.alt_text|default:"" }}"/>
+  </a>
+  <h2>
+    <a href="{{ product.url }}">{{ product.title }}</a>
+  </h2>
+</a>
+<p>{{ product.description|truncatewords:30 }}</p>
+{% if product.price %}
+<p class="price"><span>Price:</span> <span>${{ product.price }}</span></p>
+{% endif %}
+<div class="clearfix"></div>
+</div>

@@ -6,7 +6,7 @@
     <div>
       <div class="slidecopy">
         <h1>{{ unit.title }}</h1>
-        <p>{{ unit.description }}</p>
+        <p>{{ unit.description|truncatewords:30 }}</p>
       </div>
       <img src="{{ unit.image.image.url }}" alt="{{ unit.image.alt_text }}" />
     </div>
@@ -21,7 +21,7 @@
           {{ article.title }}
         </a>
       </h3>
-      <p>{{ article.text }}</p>
+      <p>{{ article.text|truncatewords:10 }}</p>
 	</li>
     {% endfor %}
   </ul>		

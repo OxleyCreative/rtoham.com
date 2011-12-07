@@ -51,7 +51,17 @@
       {% block content %}{% endblock content %}
 	</div>
 	<div id="footer">
-	  {% block footer %}{% endblock footer %}
+	  {% block footer %}
+      <ul id="bottomnav">
+		<li><a href="{% url home.views.index %}">Home</a></li>
+		<li>|</li>
+		<li><a href="{% url products.views.index %}">Products &amp; Services</a></li>
+		<li>|</li>
+		<li><a href="{% url home.views.about_us %}">About Us</a></li>
+	  </ul>
+	  <p>&#169;2011 RTO Electronics. Designed by Robert and Steven Oxley.</p>
+	  <p>valid xhtml. valid css. all rights reserved.</p>
+      {% endblock footer %}
 	</div>
 </div>
 </body>
