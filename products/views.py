@@ -24,8 +24,13 @@ def product_list(request, category_string):
         
     categories = {}
     for category in category_strings:
-        categories[category] = Product.objects.select_related(
-            'image').filter(category = category)[:limit]
+        query = Product.objects.select_related(
+            'image').filter(category = category)
+        if category == 'USED_EQUIPMENT':
+            query = query.order_by("-created_at")
+        else:
+            query = query.order_by("title")
+        categories[category] = query[:5]
     
     return render_to_response(
         'products/list.html',
