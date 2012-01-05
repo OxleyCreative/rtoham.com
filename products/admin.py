@@ -11,6 +11,9 @@ class ProductAdmin(admin.ModelAdmin):
         'image', 'images', 'price',
         'quantity', 'slug'
     ]
+    list_display = [ 'title', 'category', 'price', 'quantity' ]
+    list_filter = [ 'category' ]
+    list_editable = [ 'category', 'price', 'quantity' ]
     prepopulated_fields = {'slug': ('category', 'title',)}
 
 admin.site.register(Picture, PictureAdmin)
