@@ -1,5 +1,6 @@
 from django.db import models
-import Image, os, tempfile
+from PIL import Image
+import os, tempfile
 from django.core.files import File
 
 class PictureValidators:
@@ -37,7 +38,7 @@ class Picture(models.Model):
     height = models.IntegerField(null=True)
     thumbnail_width = models.IntegerField(null=True)
     thumbnail_height = models.IntegerField(null=True)
-    
+
     THUMBNAIL_SIZE = (120, 90)
     IMAGE_SIZE = (460, 345)
 
@@ -51,13 +52,13 @@ class Picture(models.Model):
             if not hasattr(self.image, "file"):
                 self.populateResizedImage(self.IMAGE_SIZE, self.image)
         super(Picture, self).save(*args, **kwargs)
-        
+
     def populateResizedImage(self, size, attribute):
         self.original_image.open("rb")
         image = Image.open(self.original_image)
         name, ext = os.path.splitext(self.original_image.name)
         resized = image.resize(size, Image.ANTIALIAS)
-        
+
         # Create a temporary file to save the resized image to.
         (temp_fd, temp_filepath) = tempfile.mkstemp(ext)
         # We'll have to close the file using the file descriptor and
@@ -75,5 +76,5 @@ class Picture(models.Model):
 
     class Meta:
       app_label = 'products'
-    
+
 
