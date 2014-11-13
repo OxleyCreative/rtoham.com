@@ -72,7 +72,6 @@ class Picture(models.Model):
                                save=False)
         temp_file.close()
         os.remove(temp_filepath)
-        self.original_image.close()
 
     class Meta:
       app_label = 'products'
