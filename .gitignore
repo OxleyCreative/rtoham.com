@@ -1,5 +1,7 @@
 *.swp
 settings.py
-settings.py.template
+settings.py.*
+!settings.py.example
 *.pyc
 .elasticbeanstalk/
+uploads
