@@ -2,6 +2,7 @@
 settings.py
 settings.py.*
 !settings.py.example
+!settings.py.docker
 *.pyc
 .elasticbeanstalk/
 uploads
