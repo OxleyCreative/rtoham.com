@@ -4,6 +4,8 @@ import os
 DEBUG = False
 TEMPLATE_DEBUG = False
 
+ALLOWED_HOSTS = ['.rtoham.com', '127.0.0.1', 'localhost', '104.236.145.195']
+
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
